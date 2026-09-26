@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlayGem Séries</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#070910;
+  color:white;
+}
+
+header{
+  height:76px;
+  display:flex;
+  align-items:center;
+  padding:0 5%;
+  border-bottom:1px solid #252936;
+  background:#080910;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:900;
+}
+
+.logo span{
+  color:#8b5cf6;
+}
+
+.back{
+  margin-left:auto;
+  color:white;
+  text-decoration:none;
+  background:#20232c;
+  padding:12px 20px;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+.hero{
+  padding:70px 5% 50px;
+  background:
+  radial-gradient(circle at 70% 40%,#3b1d5e 0%,transparent 35%),
+  linear-gradient(135deg,#111525,#070910 65%);
+}
+
+.hero h1{
+  font-size:52px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  color:#b8bdcc;
+  font-size:19px;
+}
+
+.live{
+  display:inline-block;
+  margin-bottom:18px;
+  background:#ed2945;
+  padding:8px 14px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+main{
+  padding:45px 5%;
+}
+
+h2{
+  font-size:28px;
+  margin-bottom:25px;
+}
+
+.channels{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  min-height:180px;
+  border:1px solid #292e3c;
+  border-radius:16px;
+  padding:25px;
+  background:
+  radial-gradient(circle at 70% 30%,#442365,transparent 40%),
+  #10131c;
+  transition:.25s;
+  cursor:pointer;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#8b5cf6;
+}
+
+.card h3{
+  font-size:21px;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#aab0c0;
+  line-height:1.5;
+}
+
+.badge{
+  display:inline-block;
+  background:#ed2945;
+  padding:5px 9px;
+  border-radius:6px;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:45px;
+}
+
+.notice{
+  margin-top:40px;
+  padding:20px;
+  background:#11141d;
+  border:1px solid #292e3c;
+  border-radius:12px;
+  color:#b8bdcc;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">PlayGem <span>TV</span> 📺</div>
+  <a class="back" href="index.html">← Accueil</a>
+</header>
+
+<section class="hero">
+  <div class="live">● EN CONTINU</div>
+  <h1>PlayGem Séries</h1>
+  <p>Des séries françaises et internationales à regarder gratuitement en continu.</p>
+</section>
+
+<main>
+
+<h2>📺 Séries en continu</h2>
+
+<div class="channels">
+
+  <div class="card">
+    <div class="badge">EN DIRECT</div>
+    <h3>🇫🇷 Séries françaises</h3>
+    <p>Comédies, feuilletons, classiques et séries populaires.</p>
+  </div>
+
+  <div class="card">
+    <div class="badge">EN CONTINU</div>
+    <h3>😂 Comédies</h3>
+    <p>Une sélection de séries humoristiques et familiales.</p>
+  </div>
+
+  <div class="card">
+    <div class="badge">EN CONTINU</div>
+    <h3>🔎 Policier & Mystère</h3>
+    <p>Enquêtes, suspense et séries policières.</p>
+  </div>
+
+  <div class="card">
+    <div class="badge">EN CONTINU</div>
+    <h3>🌍 Séries internationales</h3>
+    <p>Des programmes du monde entier disponibles légalement.</p>
+  </div>
+
+</div>
+
+<div class="notice">
+<strong>PlayGem TV</strong><br><br>
+Les programmes seront ajoutés uniquement lorsqu'ils disposent d'une autorisation de diffusion ou d'une source permettant légalement leur intégration.
+</div>
+
+</main>
+
+</body>
+</html>
