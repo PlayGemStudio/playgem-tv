@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PlayGem Ciné</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:#070910;
+  color:white;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+header{
+  height:76px;
+  display:flex;
+  align-items:center;
+  padding:0 5%;
+  border-bottom:1px solid #252936;
+  background:#080910;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:900;
+}
+
+.logo span{
+  color:#8b5cf6;
+}
+
+main{
+  width:90%;
+  max-width:1250px;
+  margin:50px auto;
+}
+
+h1{
+  font-size:38px;
+  margin-bottom:8px;
+}
+
+.subtitle{
+  color:#aab0c0;
+  font-size:18px;
+  margin-bottom:35px;
+}
+
+.player{
+  background:#11141d;
+  border:1px solid #292e3d;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+video{
+  display:block;
+  width:100%;
+  max-height:680px;
+  background:#000;
+}
+
+.info{
+  padding:24px;
+}
+
+.badge{
+  display:inline-block;
+  background:#ef2948;
+  padding:7px 11px;
+  border-radius:7px;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+h2{
+  margin:5px 0 10px;
+  font-size:27px;
+}
+
+.description{
+  color:#b6bdcc;
+  line-height:1.6;
+}
+
+.legal{
+  margin-top:16px;
+  color:#8790a4;
+  font-size:14px;
+}
+
+.back{
+  display:inline-block;
+  margin-top:30px;
+  color:white;
+  text-decoration:none;
+  background:#202433;
+  padding:12px 18px;
+  border-radius:9px;
+}
+
+.back:hover{
+  background:#30364a;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">PlayGem <span>TV</span> 🎬</div>
+</header>
+
+<main>
+
+<h1>PlayGem Ciné</h1>
+<div class="subtitle">
+Films sélectionnés et diffusés légalement.
+</div>
+
+<div class="player">
+
+<video controls preload="metadata">
+  <source
+    src="https://upload.wikimedia.org/wikipedia/commons/transcoded/7/78/Gribiche_%281926%29.webm/Gribiche_%281926%29.webm.720p.vp9.webm"
+    type="video/webm">
+  Ton navigateur ne peut pas lire cette vidéo.
+</video>
+
+<div class="info">
+
+<div class="badge">FILM COMPLET</div>
+
+<h2>Gribiche</h2>
+
+<div class="description">
+Film français réalisé par Jacques Feyder, sorti en 1926.
+</div>
+
+<div class="legal">
+Source vidéo : Wikimedia Commons • Œuvre du domaine public.
+</div>
+
+</div>
+</div>
+
+<a class="back" href="index.html">← Retour à PlayGem TV</a>
+
+</main>
+
+</body>
+</html>
