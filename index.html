@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PlayGem TV</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#070910;
+  color:white;
+}
+
+/* BARRE DU HAUT */
+
+header{
+  height:76px;
+  display:flex;
+  align-items:center;
+  padding:0 5%;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(7,9,16,.94);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+  font-size:26px;
+  font-weight:800;
+  margin-right:55px;
+}
+
+.logo span{
+  color:#8b5cf6;
+}
+
+nav{
+  display:flex;
+  gap:30px;
+}
+
+nav a{
+  color:#c8cbd4;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:600;
+}
+
+nav a:hover,
+nav a.active{
+  color:white;
+}
+
+.live{
+  margin-left:auto;
+  background:#e52b42;
+  padding:10px 17px;
+  border-radius:30px;
+  font-weight:bold;
+  font-size:13px;
+}
+
+/* GRAND PROGRAMME */
+
+.hero{
+  min-height:530px;
+  display:flex;
+  align-items:flex-end;
+  padding:70px 6%;
+  position:relative;
+  background:
+    linear-gradient(90deg,#070910 5%,rgba(7,9,16,.78) 42%,rgba(7,9,16,.18)),
+    linear-gradient(0deg,#070910 0%,transparent 55%),
+    radial-gradient(circle at 75% 35%,#293b67,#11182a 40%,#070910 75%);
+}
+
+.hero-content{
+  max-width:620px;
+}
+
+.badge{
+  display:inline-block;
+  background:#e52b42;
+  border-radius:5px;
+  padding:7px 11px;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:54px;
+  line-height:1.05;
+  margin-bottom:17px;
+}
+
+.hero p{
+  color:#c4c7d0;
+  line-height:1.6;
+  font-size:17px;
+  margin-bottom:25px;
+}
+
+button{
+  border:0;
+  cursor:pointer;
+  border-radius:8px;
+  padding:14px 22px;
+  font-weight:bold;
+  font-size:15px;
+}
+
+.watch{
+  background:white;
+  color:#080a10;
+}
+
+.info{
+  background:rgba(255,255,255,.12);
+  color:white;
+  margin-left:8px;
+}
+
+/* CONTENU */
+
+main{
+  padding:10px 5% 60px;
+}
+
+.section{
+  margin-top:42px;
+}
+
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.section-title h2{
+  font-size:23px;
+}
+
+.section-title a{
+  color:#9ca3b4;
+  font-size:13px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.card{
+  cursor:pointer;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.picture{
+  height:175px;
+  border-radius:12px;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 70% 30%,#495a91,transparent 35%),
+    linear-gradient(135deg,#202943,#101522);
+}
+
+.picture.sport{
+  background:
+    radial-gradient(circle at 60% 30%,#32684e,transparent 30%),
+    linear-gradient(135deg,#142f28,#0b1616);
+}
+
+.picture.film{
+  background:
+    radial-gradient(circle at 70% 30%,#744249,transparent 30%),
+    linear-gradient(135deg,#351b24,#111018);
+}
+
+.picture.doc{
+  background:
+    radial-gradient(circle at 65% 25%,#356a83,transparent 30%),
+    linear-gradient(135deg,#17334a,#0b1219);
+}
+
+.picture.game{
+  background:
+    radial-gradient(circle at 70% 25%,#633c9b,transparent 30%),
+    linear-gradient(135deg,#291849,#0d0b16);
+}
+
+.channel{
+  position:absolute;
+  left:13px;
+  top:13px;
+  padding:6px 9px;
+  background:rgba(0,0,0,.65);
+  border-radius:5px;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.red{
+  background:#e52b42;
+}
+
+.card h3{
+  font-size:15px;
+  margin-top:11px;
+  margin-bottom:5px;
+}
+
+.card p{
+  color:#858b9b;
+  font-size:12px;
+}
+
+/* CHAÎNES */
+
+.channels{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.channel-box{
+  min-height:115px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:13px;
+  padding:23px;
+  background:linear-gradient(145deg,#131722,#0c0e15);
+  transition:.25s;
+}
+
+.channel-box:hover{
+  border-color:#7857e8;
+  transform:translateY(-4px);
+}
+
+.channel-box strong{
+  display:block;
+  font-size:19px;
+  margin-bottom:8px;
+}
+
+.channel-box span{
+  color:#858b9b;
+  font-size:13px;
+}
+
+footer{
+  margin-top:70px;
+  padding:35px 5%;
+  border-top:1px solid rgba(255,255,255,.08);
+  color:#6f7585;
+  font-size:13px;
+}
+
+/* TELEPHONE */
+
+@media(max-width:900px){
+  nav{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .cards,
+  .channels{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:550px){
+  .cards,
+  .channels{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    min-height:470px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    PlayGem <span>TV</span> 📺
+  </div>
+
+  <nav>
+    <a class="active" href="#">Accueil</a>
+    <a href="#">Films</a>
+    <a href="#">Sport</a>
+    <a href="#">Documentaires</a>
+    <a href="#">Gaming</a>
+  </nav>
+
+  <div class="live">● EN DIRECT</div>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="badge">● À LA UNE</div>
+
+    <h1>Votre nouvelle façon de regarder.</h1>
+
+    <p>
+      Films, sport, documentaires et gaming réunis gratuitement
+      sur PlayGem TV.
+    </p>
+
+    <button class="watch">▶ Regarder</button>
+    <button class="info">Plus d'infos</button>
+
+  </div>
+
+</section>
+
+
+<main>
+
+<section class="section">
+
+  <div class="section-title">
+    <h2>🔴 En direct maintenant</h2>
+    <a>Voir tout</a>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="picture sport">
+        <span class="channel red">● DIRECT</span>
+      </div>
+      <h3>PlayGem Sport</h3>
+      <p>Le programme sportif du moment</p>
+    </div>
+
+    <div class="card">
+      <div class="picture film">
+        <span class="channel">CINÉMA</span>
+      </div>
+      <h3>PlayGem Ciné</h3>
+      <p>Films à regarder gratuitement</p>
+    </div>
+
+    <div class="card">
+      <div class="picture doc">
+        <span class="channel">DOCUMENTAIRE</span>
+      </div>
+      <h3>Planète & Découverte</h3>
+      <p>Nature • Histoire • Voyage</p>
+    </div>
+
+    <div class="card">
+      <div class="picture game">
+        <span class="channel">GAMING</span>
+      </div>
+      <h3>PlayGem Gaming</h3>
+      <p>Jeux • Rétro • Découvertes</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-title">
+    <h2>Nos chaînes</h2>
+  </div>
+
+  <div class="channels">
+
+    <div class="channel-box">
+      <strong>⚽ PlayGem Sport</strong>
+      <span>Sport & événements</span>
+    </div>
+
+    <div class="channel-box">
+      <strong>🎬 PlayGem Ciné</strong>
+      <span>Films & cinéma</span>
+    </div>
+
+    <div class="channel-box">
+      <strong>🌍 PlayGem Doc</strong>
+      <span>Documentaires & découvertes</span>
+    </div>
+
+    <div class="channel-box">
+      <strong>🎮 PlayGem Gaming</strong>
+      <span>Gaming & jeux vidéo</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-title">
+    <h2>À découvrir sur PlayGem TV</h2>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="picture doc"></div>
+      <h3>Les merveilles de notre planète</h3>
+      <p>Documentaire</p>
+    </div>
+
+    <div class="card">
+      <div class="picture film"></div>
+      <h3>Le cinéma autrement</h3>
+      <p>Film</p>
+    </div>
+
+    <div class="card">
+      <div class="picture sport"></div>
+      <h3>Passion Sport</h3>
+      <p>Sport</p>
+    </div>
+
+    <div class="card">
+      <div class="picture game"></div>
+      <h3>Génération Gaming</h3>
+      <p>Gaming</p>
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+  © 2026 PlayGem TV — Films • Sport • Documentaires • Gaming
+</footer>
+
+</body>
+</html>
